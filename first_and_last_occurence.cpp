@@ -1,6 +1,9 @@
-    int i=0,j=n-1,s=1;
+    vector<int> find(int arr[], int n , int x )
+{
+    // code here
+        int i=0,j=n-1,s=1;
     vector<int>ans;
-    while(i<j){
+    while(i<=j){
         int mid=(i+j)>>1;
         if(arr[mid]<x){
             i=mid+1;
@@ -10,7 +13,7 @@
             if(arr[mid-1]==x){
                 j=mid-1;
             }else if(arr[mid-1]!=x){
-                cout<<i<<" "<<mid<<" "<<j<<endl;
+                //cout<<i<<" "<<mid<<" "<<j<<endl;
             
                 ans.push_back(mid);
                 
@@ -31,7 +34,7 @@
             if(arr[mid+1]==x){
                 i=mid+1;
             }else if(arr[mid+1]!=x){
-                cout<<i<<" "<<mid<<" "<<j<<endl;
+                //cout<<i<<" "<<mid<<" "<<j<<endl;
               
                 ans.push_back(mid);
                 break;
@@ -40,3 +43,4 @@
     }if(ans.size()>0)
      return ans;
     else return {-1,-1};
+}
